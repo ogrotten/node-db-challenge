@@ -39,7 +39,11 @@ function readTasks(id) { // must include "Project Name and Description"
 		join projects on tasks.project_id = projects.id
 	 */
 	return db("tasks")
-		// .join("projects", "tasks.project_id", "projects.id")
+		// .select("*")
+		// .select("name as ProjName", "projects.description as ProjDesc", "description as TaskDesc")
+		// .select("projects.description as ProjDesc")
+		// .select("description as TaskDesc")
+		.join("projects", "tasks.project_id", "projects.id")
 }
 
 function createTask(data) {
