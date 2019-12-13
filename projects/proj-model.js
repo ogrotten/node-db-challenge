@@ -14,8 +14,9 @@ function readProjs(id) {
 	return db("projects")
 }
 
-function createProj(id) {
-	return db("")
+function createProj(data) {
+	return db("projects")
+		.insert(data, "id");
 }
 
 
@@ -24,17 +25,25 @@ function readResources(id) {
 	return db("resources")
 }
 
-function createResource(id) {
-	return db("")
+function createResource(data) {
+	return db("resources")
+		.insert(data, "id");
 }
 
 
 // task
 function readTasks(id) { // must include "Project Name and Description"
+	/* 
+	The Query:
+		select name as "Proj Name", projects.description as "Proj Desc", description as "Task Desc" from tasks
+		join projects on tasks.project_id = projects.id
+	 */
 	return db("tasks")
+		.join("projects", "tasks.project_id", "projects.id")
 }
 
-function createTask(id) {
-	return db("")
+function createTask(data) {
+	return db("tasks")
+		.insert(data, "id");
 }
 
