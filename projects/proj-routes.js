@@ -4,6 +4,9 @@ const Proj = require('./proj-model.js');
 
 const router = express.Router();
 
+function clg(...x) {console.log(...x)}
+
+
 /* 
 GET routes
 */
@@ -12,6 +15,11 @@ GET routes
 router.get('/', (req, res) => {
 	Proj.readProjs()
 		.then(proj => {
+			proj.forEach(x => {
+				x.completed
+				? x.completed = true
+				: x.completed = false
+			})
 			res.json(proj);
 		})
 		.catch(err => {
@@ -34,6 +42,11 @@ router.get('/resources', (req, res) => {
 router.get('/tasks', (req, res) => {
 	Proj.readTasks()
 		.then(Tasks => {
+			Tasks.forEach(x => {
+				x.completed
+				? x.completed = true
+				: x.completed = false
+			})
 			res.json(Tasks);
 		})
 		.catch(err => {
