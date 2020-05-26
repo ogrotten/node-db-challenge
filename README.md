@@ -1,4 +1,25 @@
-# Sprint Challenge: Node DB Sprint
+# Self-Study/Essay Questions
+# Self-Study/Essay Questions
+# Self-Study/Essay Questions
+
+### [ ] Explain the difference between `Relational Databases` and `SQL`.
+- SQL is the code you use to get information from a Relational Database
+
+### [ ] Why do tables need a `primary key`?
+- So that the dbms can more easily track the data.
+
+### [ ] What is the name given to a table column that references the primary key on another table.
+- Foreign Key
+
+### [ ] What do we need in order to have a _many to many_ relationship between two tables.
+- A transactional table in between the 2 tables that keys unique combinations of the 2 data sets.
+
+# Self-Study/Essay Questions
+# Self-Study/Essay Questions
+# Self-Study/Essay Questions
+
+
+## Sprint Challenge: Node DB Sprint
 
 ## Description
 
